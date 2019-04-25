@@ -1,0 +1,40 @@
+{
+    "model" : {
+        "min_input_size":       288,
+        "max_input_size":       448,
+        "anchors":              [55,69, 75,230, 133,240, 136,129, 137,366, 201,293, 223,178, 305,344, 318,235],
+        "labels":               ["kangaroo"]
+    },
+
+    "train": {
+        "train_image_folder":   "/home/psychic/storage/yolo/kangaroo/images/",
+        "train_annot_folder":   "/home/psychic/storage/yolo/kangaroo/annots/",
+        "cache_name":           "kangaroo_train.pkl",
+
+        "train_times":          8,
+        "batch_size":           8,
+        "learning_rate":        1e-4,
+        "nb_epochs":            50,
+        "warmup_epochs":        3,
+        "ignore_thresh":        0.5,
+        "gpus":                 "0,1",
+
+        "grid_scales":          [1,1,1],
+        "obj_scale":            5,
+        "noobj_scale":          1,
+        "xywh_scale":           1,
+        "class_scale":          1,
+
+        "tensorboard_dir":      "logs",
+        "saved_weights_name":   "kangaroo.h5",
+        "debug":                false
+    },
+
+    "valid": {
+        "valid_image_folder":   "",
+        "valid_annot_folder":   "",
+        "cache_name":           "",
+
+        "valid_times":          1
+    }
+}
